@@ -1,15 +1,17 @@
 package service;
 
 import model.Libro;
+import factory.LibroFactory;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LibroService {
     private List<Libro> libros = new ArrayList<>();
 
-    public void agregarLibro(Libro libro) {
-        libros.add(libro);
-    }
+    // Importa factory.LibroFactory
+    public void agregarLibro(String titulo, LibroFactory factory) {
+    libros.add(factory.crearLibro(titulo));
+}
 
     public Libro buscarPorTitulo(String titulo) {
         for (Libro l : libros) {

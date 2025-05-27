@@ -1,39 +1,70 @@
 package facade;
 
-import model.Libro;
+import factory.LibroFactory;
+import factory.LibroDisponibleFactory;
+import factory.UsuarioFactory;
 import model.Usuario;
+import factory.UsuarioFactory;
+import model.Libro;
+import model.Observador;
+import model.UsuarioObservador;
 import service.LibroService;
-import service.UsuarioService;
 import service.PrestamoService;
+import service.UsuarioService;
+import comando.ComandoPrestamo;
+import comando.PrestarLibroCommand;
 
+// Patrón: Fachada
 public class BibliotecaFacade {
     private LibroService libroService = new LibroService();
     private UsuarioService usuarioService = new UsuarioService();
     private PrestamoService prestamoService = new PrestamoService();
 
+    // Agregar libro con Factory Method
     public void agregarLibro(String titulo) {
-        libroService.agregarLibro(new Libro(titulo));
+        LibroFactory factory = new LibroDisponibleFactory(); // patrón Factory Method
+        libroService.agregarLibro(titulo, factory);
     }
 
-    public void registrarUsuario(String nombre) {
-        usuarioService.registrarUsuario(new Usuario(nombre));
+    // Agregar libro usando Factory pasada por parámetro (opcional)
+    public void agregarLibroConFactory(String titulo, LibroFactory factory) {
+        libroService.agregarLibro(titulo, factory);
     }
 
+    // Registrar usuario con Abstract Factory
+    public void registrarUsuario(String nombre, UsuarioFactory factory) {
+        Usuario usuario = factory.crearUsuario(nombre);
+        usuarioService.registrarUsuario(usuario);
+    }
+
+    // Prestar libro con patrón Comando
     public void prestarLibro(String titulo, String nombreUsuario) {
         Libro libro = libroService.buscarPorTitulo(titulo);
         Usuario usuario = usuarioService.buscarPorNombre(nombreUsuario);
 
         if (libro != null && usuario != null) {
-            prestamoService.prestarLibro(libro, usuario);
+            // Patrón Observer: el usuario se registra como observador si el libro no está disponible
+            if (!libro.isDisponible()) {
+                Observador observador = new UsuarioObservador(usuario.getNombre());
+                libro.agregarObservador(observador);
+                System.out.println("Libro no disponible. Se agregó observador.");
+                return;
+            }
+
+            // Patrón Comando: ejecutar préstamo
+            ComandoPrestamo comando = new PrestarLibroCommand(prestamoService, libro, usuario);
+            comando.ejecutar();
         } else {
             System.out.println("Libro o usuario no encontrado.");
         }
     }
 
+    // Devolver libro (se notifica al observador)
     public void devolverLibro(String titulo) {
         Libro libro = libroService.buscarPorTitulo(titulo);
         if (libro != null) {
             prestamoService.devolverLibro(libro);
+            // La notificación a observadores ya está en libro.devolver()
         } else {
             System.out.println("Libro no encontrado.");
         }
