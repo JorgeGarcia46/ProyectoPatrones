@@ -3,22 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Model/AccesoAdministrador.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/comando/PrestarLibroCommand.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/comando/ComandoPrestamo.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Model/Libro.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/proyectopatrones/ProyectoPatrones.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Model/Observador.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/factory/LibroPrestadoFactory.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/vista/VistaConsola.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Model/AccesoEstudiante.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Model/Estudiante.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/factory/EstudianteFactory.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/factory/LibroFactory.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/factory/LibroDisponibleFactory.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Facade/BibliotecaFacade.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/factory/UsuarioFactory.java</file>
-            <file>file:/C:/Users/danal/Desktop/ProyectoPatrones-Danaly/ProyectoPatrones-Danaly/ProyectoPatrones/src/Model/EstrategiaAcceso.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/factory/LibroFactory.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/Service/LibroService.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/vista/BibliotecaForm.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/factory/LibroDisponibleFactory.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/proyectopatrones/ProyectoPatrones.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/factory/LibroPrestadoFactory.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/Model/Libro.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/Model/TipoInformacionLibro.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/Facade/BibliotecaFacade.java</file>
+            <file>file:/C:/Users/danal/Documents/GitHub/ProyectoPatrones/ProyectoPatrones/src/factory/EstudianteFactory.java</file>
         </group>
     </open-files>
 </project-private>

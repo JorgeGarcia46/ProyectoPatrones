@@ -13,6 +13,9 @@ import service.PrestamoService;
 import service.UsuarioService;
 import comando.ComandoPrestamo;
 import comando.PrestarLibroCommand;
+import java.util.List;
+import model.TipoInformacionLibro;
+
 
 // Patrón: Fachada
 public class BibliotecaFacade {
@@ -21,14 +24,16 @@ public class BibliotecaFacade {
     private PrestamoService prestamoService = new PrestamoService();
 
     // Agregar libro con Factory Method
-    public void agregarLibro(String titulo) {
-        LibroFactory factory = new LibroDisponibleFactory(); // patrón Factory Method
-        libroService.agregarLibro(titulo, factory);
+    public void agregarLibro(String titulo, String autor, TipoInformacionLibro tipo, int anio) {
+        LibroFactory factory = new LibroDisponibleFactory();
+        Libro libro = factory.crearLibro(titulo, autor, tipo, anio);
+        libroService.agregarLibro(libro);
     }
 
     // Agregar libro usando Factory pasada por parámetro (opcional)
-    public void agregarLibroConFactory(String titulo, LibroFactory factory) {
-        libroService.agregarLibro(titulo, factory);
+    public void agregarLibroConFactory(String titulo, String autor, TipoInformacionLibro tipo, int anio, LibroFactory factory) {
+        Libro libro = factory.crearLibro(titulo, autor, tipo, anio);
+        libroService.agregarLibro(libro);
     }
 
     // Registrar usuario con Abstract Factory
@@ -68,5 +73,12 @@ public class BibliotecaFacade {
         } else {
             System.out.println("Libro no encontrado.");
         }
+    }
+    public List<Libro> obtenerLibros() {
+        return libroService.obtenerLibros();
+    }
+    
+    public Libro buscarPorTitulo(String titulo) {
+        return libroService.buscarPorTitulo(titulo);
     }
 }

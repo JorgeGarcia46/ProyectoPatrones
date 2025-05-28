@@ -5,22 +5,60 @@ import java.util.List;
 
 // Patrón: Referencia de tipo, Observador
 public class Libro {
-    private TipoInformacionLibro titulo;
+    private String titulo;
+    private String autor;
+    private TipoInformacionLibro tipo;
+    private int anio; // Campo nuevo para el año
     private boolean disponible = true;
     private List<Observador> observadores = new ArrayList<>();
 
-    public Libro(String titulo) {
-        this.titulo = new TipoInformacionLibro(titulo);
+    // Constructor actualizado
+    public Libro(String titulo, String autor, TipoInformacionLibro tipo, int anio) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.tipo = tipo;
+        this.anio = anio;
     }
 
+    // Getters
     public String getTitulo() {
-        return titulo.getValor();
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public TipoInformacionLibro getTipo() {
+        return tipo;
     }
 
     public boolean isDisponible() {
         return disponible;
     }
 
+    // Setters (para modificar libro)
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setTipo(TipoInformacionLibro tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public int getAnio() {
+      return anio;
+    }
+
+    // Métodos de préstamo
     public void prestar() {
         disponible = false;
     }
@@ -30,6 +68,7 @@ public class Libro {
         notificarDisponibilidad();
     }
 
+    // Observador
     public void agregarObservador(Observador o) {
         observadores.add(o);
     }

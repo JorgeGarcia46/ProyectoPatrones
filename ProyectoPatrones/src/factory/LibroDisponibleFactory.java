@@ -6,6 +6,7 @@
 package factory;
 
 import model.Libro;
+import model.TipoInformacionLibro;
 
 /**
  *
@@ -13,7 +14,7 @@ import model.Libro;
  */
 public class LibroDisponibleFactory extends LibroFactory {
     @Override
-    public Libro crearLibro(String titulo) {
-        return new Libro(titulo);
+    public Libro crearLibro(String titulo, String autor, TipoInformacionLibro tipo, int anio) {
+        return new Libro(titulo, autor, tipo, anio);
     }
 }

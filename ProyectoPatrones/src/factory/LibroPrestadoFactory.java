@@ -6,15 +6,14 @@
 package factory;
 
 import model.Libro;
-/**
- *
- * @author danal
- */
+import model.TipoInformacionLibro;
+
 public class LibroPrestadoFactory extends LibroFactory {
+
     @Override
-    public Libro crearLibro(String titulo) {
-        Libro libro = new Libro(titulo);
-        libro.prestar();
+    public Libro crearLibro(String titulo, String autor, TipoInformacionLibro tipo, int anio) {
+        Libro libro = new Libro(titulo, autor, tipo, anio);
+        libro.prestar(); // Marcamos como no disponible
         return libro;
     }
 }

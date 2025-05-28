@@ -6,10 +6,13 @@
 package model;
 
 // Patrón: Referencia de Tipo
-public class TipoInformacionLibro {
-    private String valor;
+public enum TipoInformacionLibro {
+    DISPONIBLE("Disponible"),
+    PRESTADO("Prestado");
 
-    public TipoInformacionLibro(String valor) {
+    private final String valor;
+
+    TipoInformacionLibro(String valor) {
         this.valor = valor;
     }
 

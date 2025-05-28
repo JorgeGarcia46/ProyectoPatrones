@@ -3,18 +3,16 @@ package proyectopatrones;
 import facade.BibliotecaFacade;
 import factory.EstudianteFactory;
 import factory.LibroPrestadoFactory;
-import model.Usuario;
+import factory.LibroDisponibleFactory;
+import factory.LibroFactory;
+import model.TipoInformacionLibro;
 import vista.VistaConsola;
+
 
 public class ProyectoPatrones {
     public static void main(String[] args) {
         BibliotecaFacade biblioteca = new BibliotecaFacade();
         VistaConsola vista = new VistaConsola();
-
-        // FACTORY METHOD: Agregar libros
-        biblioteca.agregarLibro("1984");
-        biblioteca.agregarLibro("El Principito");
-        biblioteca.agregarLibroConFactory("Libro Prestado", new LibroPrestadoFactory());
 
         // ABSTRACT FACTORY: Registrar usuarios
         biblioteca.registrarUsuario("Ana", new EstudianteFactory());

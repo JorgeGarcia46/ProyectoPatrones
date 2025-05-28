@@ -9,9 +9,10 @@ public class LibroService {
     private List<Libro> libros = new ArrayList<>();
 
     // Importa factory.LibroFactory
-    public void agregarLibro(String titulo, LibroFactory factory) {
-    libros.add(factory.crearLibro(titulo));
-}
+    public void agregarLibro(Libro libro) {
+        libros.add(libro);
+    }
+
 
     public Libro buscarPorTitulo(String titulo) {
         for (Libro l : libros) {
@@ -20,5 +21,8 @@ public class LibroService {
             }
         }
         return null;
+    }
+    public List<Libro> obtenerLibros() {
+        return libros;
     }
 }

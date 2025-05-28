@@ -6,6 +6,7 @@
 package factory;
 
 import model.Libro;
+import model.TipoInformacionLibro;
 
 /**
  *
@@ -13,5 +14,5 @@ import model.Libro;
  */
 // Patrón: Factory Method
 public abstract class LibroFactory {
-    public abstract Libro crearLibro(String titulo);
+    public abstract Libro crearLibro(String titulo, String autor, TipoInformacionLibro tipo, int anio);
 }
